@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>Javascript Test</title>
+	<link rel="stylesheet" type="text/css" href="https://wlr3iii.github.io/style.css">
+	<style type="text/css">
+	#square {
+		margin-top: 20px;
+		margin-left: 100px;
+		height: 300px;
+		width: 300px;
+		background: yellow;
+	}
+	#square:hover{
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+<div id = "square" onclick="show_sentence()">"How are you doing??"</div>
+<script>
+	function show_sentence(){
+		document.getElementById("square").innerHTML = document.getElementByTagName("p")[0].innerHTML;
+	}
+</script>
+</body>
+</html>
