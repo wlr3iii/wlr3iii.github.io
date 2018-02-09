@@ -13,13 +13,16 @@
 	#square:hover{
 		cursor: pointer;
 	}
+	div {
+		margin-bottom: 20px;
+	}
 	</style>
 </head>
 <body>
-<div id = "square" onclick="show_sentence()">"How are you doing??"</div>
+<div id = "square" onclick="show_sentence()">How are you doing?</div>
 <script>
-	function show_sentence(){
-		document.getElementById("square").innerHTML = document.getElementByTagName("p")[0].innerHTML;
+function show_sentence(){
+	document.getElementById("square").innerHTML = document.getElementByTagName("p")[0].innerHTML;
 	}
 </script>
 </body>
