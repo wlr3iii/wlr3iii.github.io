@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html>
+<head>
+	<title>More JavaScript</title>
+</head>
 <body>
+	<h1>Javascript Looping</h1>
+	<div id="people"></div>
+	<script>
+		var users = [
+		{
+			First: "Rebecca",
+			Last: "Follman",
+			User ID: "rfollman",
+			Date of Login: "20/01/18",
+			City: "Washington"
+		},
+		{
+			First: "Susan",
+			Last: "Parks",
+			User ID: "sparks",
+			Date of Login: "01/15/18",
+			City: "Tallahassee"
+		},
+		{
+			First: "Zola",
+			Last: "Hoehn",
+			User ID: "zola524",
+			Date of Login: "02/10/18",
+			City: "Gainesville"
+		}
+	];	
 
-<h2>JavaScript Loops</h2>
-
-<p>The for/in statement loops through the properties of an object.</p>
-
-<p id="demo"></p>
-
-<script>
-var txt = "";
-var person = {fname:"John", lname:"Doe", age:25}; 
-var x;
-for (x in person) {
-    txt += person[x] + " ";
-}
-document.getElementById("demo").innerHTML = txt;
-</script>
+	var test = "";
+	var i;
+	for (i in users) {
+		text += users[i] + " ";
+	}
+	document.getElementById("people").innerHTML = text;
+	</script>
 
 </body>
 </html>
