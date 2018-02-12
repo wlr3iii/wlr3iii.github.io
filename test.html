@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>More JavaScript</title>
+</head>
+<body>
+	<h1>Javascript Looping</h1>
+	<div id="people"></div>
+	<script>
+		var users = [
+		{
+			"First": "Rebecca",
+			"Last": "Follman",
+			"User ID": "rfollman",
+			"Date of Login": "20/01/18",
+			"City": "Washington"
+		},
+		{
+			"First": "Susan",
+			"Last": "Parks",
+			"User ID": "sparks",
+			"Date of Login": "01/15/18",
+			"City": "Tallahassee"
+		},
+		{
+			"First": "Zola",
+			"Last": "Hoehn",
+			"User ID": "zola524",
+			"Date of Login": "02/10/18",
+			"City": "Gainesville"
+		}
+	];	
+
+	var test = "";
+	var i;
+	for (i=0; i< users.length; i++) {
+		text += users[i];
+	}
+	document.getElementById("people").innerHTML = text;
+	</script>
+
+</body>
+</html>
