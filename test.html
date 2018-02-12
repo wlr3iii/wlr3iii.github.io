@@ -7,7 +7,7 @@
 	<h1>Javascript Looping</h1>
 	<div id="people"></div>
 	<script>
-		var users = [
+		var users = 
 		{
 			"First": "Rebecca",
 			"Last": "Follman",
@@ -29,11 +29,11 @@
 			"Date of Login": "02/10/18",
 			"City": "Gainesville"
 		}
-	];	
+	;	
 
 	var test = "";
 	var i;
-	for (i = 0; i < users.length; i++) {
+	for (i in users) {
 		text += users[i] + " ";
 	}
 	document.getElementById("people").innerHTML = text;
