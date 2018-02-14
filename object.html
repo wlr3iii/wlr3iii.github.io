@@ -40,7 +40,38 @@
 </head>
 <body>
 		<h1>Music Playlist</h1>
-		
+		<h2>Music Table</h2>
+		<table id="music"></table><br><br>
+		<h2>Updated Music Table</h2>
+		<table>
+			<thead>
+				<tr><th>Song</th><th>Artist</th><th>Duration</th><th>Album</th></tr>
+			</thead>
+			<tbody id="playmusic">
+				
+			</tbody>
+		</table>
+		<script>
+			/*document.write(users[0].First);*/
+			var text = "";
+			var newtext = "";
+			/*var x;*/
+			for (var x in playlist) {
+				if (playlist.hasOwnProperty(x)) {
+					var obj = playlist[x];
+					for (var y in obj) {
+						if (obj.hasOwnProperty(y)) {
+							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+							/*document.write(y + " -> " + obj[y] + '\n');*/
+						}
+					}
+					newtext += "<tr><td>" + obj['First'] + " " + obj['Last'] + "</td><td>" + obj['User ID'] + "</td></tr>";
 
+				}
+			}
+			document.getElementById("music").innerHTML = text;
+			document.getElementById("playmusica").innerHTML = newtext;
+			document.getElementByID("music").innerHTML = text;
+		</script>
 </body>
 </html>
