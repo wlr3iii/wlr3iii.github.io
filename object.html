@@ -37,6 +37,21 @@
 		}
 	];
 	</script>
+
+	<style>
+table, td, th {
+    border: 1px solid black;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+}
+</style>
 </head>
 <body>
 		<h1>Music Playlist</h1>
@@ -65,7 +80,7 @@
 							/*document.write(y + " -> " + obj[y] + '\n');*/
 						}
 					}
-					newtext += "<tr><td>" + obj['Song'] + " " + obj['Artist'] + "</td><td>" + obj['Duration'] + "</td></tr>";
+					newtext += "<tr><td>" + obj['Song Name'] + " " + obj['Artist'] + "</td><td>" + obj['Duration'] + "</td></tr>";
 				}
 			}
 			document.getElementById("music").innerHTML = text;
