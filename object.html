@@ -44,7 +44,7 @@ table, td, th, tr {
 }
 
 table {
-	padding-left: 50%;
+	text-align: center;
     border-collapse: collapse;
     width: 40%;
 }
@@ -81,7 +81,7 @@ th {
 							/*document.write(y + " -> " + obj[y] + '\n');*/
 						}
 					}
-					newtext += "<tr><td>" + obj['Song Name'] + "<td></td>" + obj['Artist'] + "</td><tr>";
+					newtext += "<tr><td>" + obj['Song Name'] + "<td><td>" + obj['Artist'] + "<td><td>" + obj['Duration'] + "<td></td>" + obj['Album'] + "</td><tr>";
 				}
 			}
 			document.getElementById("music").innerHTML = text;
