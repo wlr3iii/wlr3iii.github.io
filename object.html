@@ -36,6 +36,22 @@
 			"Album": "Cozy Tapes Vol. 1 Friends -"
 		}
 	];
+function addDurations(data) {
+  const total = playlist
+    .map(el => el.Duration.split(':'))
+    .reduce((p, c) => {
+      p.minutes += Number(c[0]);
+      p.seconds += Number(c[1]);
+      return p;
+    }, { minutes: 0, seconds: 0 });
+
+  const whole = Math.floor(total.seconds / 60);
+  total.minutes += whole;
+  total.seconds = total.seconds % 60;
+  return total;
+}
+
+console.log(addDurations(playlist))
 	</script>
 
 	<style>
