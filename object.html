@@ -78,7 +78,7 @@
 	<script>
 		function addDurations(data) {
 			const total = playlist
-			.map(el => el.Duration.split(':'))
+			.map(l => l.Duration.split(':'))
 			.reduce((p, c) => {
 				p.minutes += Number(c[0]);
 				p.seconds += Number(c[1]);
@@ -109,7 +109,7 @@
 			}
 		}
 
-		txt += "<tr><td>" + "5" + "</td><td>" + "5" + "</td><td>" + addDurations(playlist) + "</td></tr>";
+		txt += "<tr><td>" + "5" + "</td><td>" + "5" + "</td><td>" + console.log(addDurations(playlist)) + "</td></tr>";
 
 		document.getElementById("music").innerHTML = text;
 		document.getElementById("playmusic").innerHTML = newtext;
