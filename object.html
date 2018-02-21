@@ -35,76 +35,89 @@
 			"Duration": "3:50",
 			"Album": "Cozy Tapes Vol. 1 Friends -"
 		}
-	];
-function addDurations(data) {
-  const total = playlist
-    .map(el => el.Duration.split(':'))
-    .reduce((p, c) => {
-      p.minutes += Number(c[0]);
-      p.seconds += Number(c[1]);
-      return p;
-    }, { minutes: 0, seconds: 0 });
+		];
 
-  const whole = Math.floor(total.seconds / 60);
-  total.minutes += whole;
-  total.seconds = total.seconds % 60;
-  return total;
-}
 
-console.log(addDurations(playlist))
 	</script>
 
 	<style>
-table, td, th, tr {
-    border: 1px solid black;
-}
+	table, td, th, tr {
+		border: 1px solid black;
+	}
 
-table {
-	text-align: center;
-    width: 40%;
-}
+	table {
+		text-align: center;
+		width: 40%;
+	}
 
-th {
-    text-align: left;
-}
+	th {
+		text-align: left;
+	}
 </style>
 </head>
 <body>
-		<h1>Music Playlist</h1>
-		<h2>Music Table</h2>
-		<table id="music"></table><br><br>
-		<h2>Updated Music Table</h2>
-		<table>
-			<thead>
-				<tr><th>Song</th><th>Artist</th><th>Duration</th><th>Album</th></tr>
-			</thead>
-			<tbody id="playmusic">
-				
-			</tbody>
-		</table>
-		<script>
-			/*document.write(music[0].First);*/
-			var text = "";
-			var newtext = "";
-			/*var x;*/
-			for (var x in playlist) {
-				if (playlist.hasOwnProperty(x)) {
-					var obj = playlist[x];
-					for (var y in obj) {
-						if (obj.hasOwnProperty(y)) {
-							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
-							/*document.write(y + " -> " + obj[y] + '\n');*/
-						}
+	<h1>Music Playlist</h1>
+	<h2>Music Table</h2>
+	<table id="music"></table><br><br>
+	<h2>Updated Music Table</h2>
+	<table>
+		<thead>
+			<tr><th>Song</th><th>Artist</th><th>Duration</th><th>Album</th></tr>
+		</thead>
+		<tbody id="playmusic">
+
+		</tbody>
+	</table>
+	<h2>Statistic Table</h2>
+	<table>
+		<thead>
+			<tr><th>Number of Songs</th><th>Number of Artists</th><th>Total Playtime</th></tr>
+		</thead>
+		<tbody id="stat"></tbody>
+	</table>
+	<script>
+		function addDurations(data) {
+			const total = playlist
+			.map(el => el.Duration.split(':'))
+			.reduce((p, c) => {
+				p.minutes += Number(c[0]);
+				p.seconds += Number(c[1]);
+				return p;
+			}, { minutes: 0, seconds: 0 });
+
+			const whole = Math.floor(total.seconds / 60);
+			total.minutes += whole;
+			total.seconds = total.seconds % 60;
+			return total;
 					}
-					newtext += "<tr><td>" + obj['Song Name'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Duration'] + "</td><td>" + obj['Album'] + "</td><tr>";
+		/*document.write(music[0].First);*/
+		var text = "";
+		var newtext = "";
+		var txt = "";
+		/*var x;*/
+		for (var x in playlist) {
+			if (playlist.hasOwnProperty(x)) {
+				var obj = playlist[x];
+				for (var y in obj) {
+					if (obj.hasOwnProperty(y)) {
+						text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+						/*document.write(y + " -> " + obj[y] + '\n');*/
+					}
 				}
+				newtext += "<tr><td>" + obj['Song Name'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Duration'] + "</td><td>" + obj['Album'] + "</td><tr>";
+
 			}
-			document.getElementById("music").innerHTML = text;
-			document.getElementById("playmusic").innerHTML = newtext;
-			document.getElementByID("music").innerHTML = text;
-		</script>
-		<p>
-			To go back to the Index page: <a href="http://wlr3iii.github.io/index.html">Click</a>
-		</p>
+		}
+
+		txt += "<tr><td>" + "5" + "</td><td>" + "5" + "</td><td>" + addDurations(playlist) + "</td></tr>";
+
+		document.getElementById("music").innerHTML = text;
+		document.getElementById("playmusic").innerHTML = newtext;
+		document.getElementById("stat").innerHTML = txt;
+	</script>
+
+	<p>
+		To go back to the Index page: <a href="http://wlr3iii.github.io/index.html">Click</a>
+	</p>
 </body>
 </html>
