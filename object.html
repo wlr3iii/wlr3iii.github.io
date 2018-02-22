@@ -77,21 +77,45 @@
 	</table>
 	<script>
 
-		// function help from javascript, cannot get to print in table properly
-		function addDurations(data) {
-			const total = playlist
-			.map(l => l.Duration.split(':'))
-			.reduce((p, c) => {
-				p.minutes += Number(c[0]);
-				p.seconds += Number(c[1]);
-				return p;
-			}, { minutes: 0, seconds: 0 });
+		function song_total (playlist) {
+			var a = new Set();
+			for (var x in playlist) {
+				var obj = playlist[x];
+				a.add(obj["Song Name"]);
+			}
+			return a.size;
+		}
 
-			const whole = Math.floor(total.seconds / 60);
-			total.minutes += whole;
-			total.seconds = total.seconds % 60;
-			return total;
-					}
+
+		function artist_total(playlist) {
+			var a = new Set();
+			for (var x in playlist) {
+				var obj = playlist[x];
+				a.add(obj["Artist"]);
+			}
+			return a.size;
+		}
+
+		// function help from javascript and classmates
+		function addTime(playlist) {
+			var total_min = 0;
+			var total_sec = 0;
+
+			for (var song in playlist){
+				var time = playlist[song].Duration;
+				var min = parseInt(time.split(":")[0]);
+				var sec = parseInt(time.split(":")[1]);
+				total_min += min;
+				total_sec += sec;
+			}
+			total_min += Math.floor(total_sec/60);
+			total_sec = total_sec % 60;
+
+
+if (total_sec < 10) total_sec = "0" + total_sec;
+			return total_min + ":" + total_sec;
+		}
+
 		/*document.write(music[0].First);*/
 		var text = "";
 		var newtext = "";
@@ -110,8 +134,8 @@
 
 			}
 		}
-
-		txt += "<tr><td>" + "5" + "</td><td>" + "5" + "</td><td>" + addDurations(playlist) + "</td></tr>";
+			txt += "<tr><td>" + song_total(playlist) + "</td><td>" + artist_total(playlist) + "</td><td>" + addTime(playlist) + "</td></tr>";
+		
 
 		document.getElementById("music").innerHTML = text;
 		document.getElementById("playmusic").innerHTML = newtext;
