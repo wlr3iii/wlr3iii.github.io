@@ -4,64 +4,64 @@
 	<title>Javascript Test</title>
 	<link rel="stylesheet" type="text/css" href="https://wlr3iii.github.io/style.css">
 	<style type="text/css">
-		#square {
-			margin-top: 20px;
-			margin-left: 100px;
-			height: 300px;
-			width: 300px;
-			background: yellow;
-		}
+	#square {
+		margin-top: 20px;
+		margin-left: 100px;
+		height: 300px;
+		width: 300px;
+		background: yellow;
+	}
 
-		div {
-			margin-bottom: 20px;
-		}
+	div {
+		margin-bottom: 20px;
+	}
 
-		.round {
-			border-radius: 20px;
-		}
+	.round {
+		border-radius: 20px;
+	}
 
-		#square:hover{
-			cursor: pointer;
-			color: red;
+	#square:hover{
+		cursor: pointer;
+		color: red;
 
-		}
+	}
 
-		p:hover {
-			cursor: pointer;
-			color: transparent;
-		}
-		
-	</style>
+	p:hover {
+		cursor: pointer;
+		color: transparent;
+	}
+	
+</style>
 </head>
 <body>
 
-<div id="test" class="t_class"></div>
+	<div id="test" class="t_class"></div>
 
-<script>
+	<script>
 
-document.getElementById("test").innerHTML = "Hello";
+		document.getElementById("test").innerHTML = "Hello";
 // document.getElementsByTagName("div")[0].innerHTML = "Hello by Tag";
 // document.getElementsByClassName("t_class")[0].innerHTML = "Hello by Class";
 
 </script>
-	<div id="square" onclick="show_sentence()"></div>
+<div id="square" onclick="show_sentence()"></div>
 
-	<div>
-		<p> How are you doing??</p>
-	</div>
+<div>
+	<p> How are you doing??</p>
+</div>
 
-	<!-- for your exercise, comment this line out.  -->
-	<!-- <button onclick="show_sentence()">How are you doing??</button> -->
+<!-- for your exercise, comment this line out.  -->
+<!-- <button onclick="show_sentence()">How are you doing??</button> -->
 
 <script>
 
-function show_sentence(){
-	document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
-}
+	function show_sentence(){
+		document.getElementById("square").innerHTML = document.getElementsByTagName("p")[0].innerHTML;
+	}
 
 </script>
 
- <p>
+<p>
 	To go back to the Index page: <a href="http://wlr3iii.github.io/index.html">Click</a>
 </p>
 </body>
